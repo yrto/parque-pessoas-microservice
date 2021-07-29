@@ -13,13 +13,7 @@ const pessoasRoute = require("./pessoas");
 router.use("/health", healthRoute);
 router.use("/cadastrar-pessoa", cadastrarPessoaRoute);
 router.use("/alterar-pessoa", alterarPessoaRoute);
-router.use("/pessoas", pessoasRoute);
-
-// main "/" route
-
-router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+router.use("/", pessoasRoute);
 
 // export
 
