@@ -6,6 +6,10 @@ const routes = require("./routes");
 const server = express();
 const port = process.env.PORT || 3000;
 
+// middleware
+
+server.use(express.json());
+
 // use routes from "/routes"
 
 server.use("/", routes);
