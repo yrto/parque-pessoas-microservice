@@ -7,7 +7,9 @@ const health = require("../controllers/health");
 
 // route handling
 
-router.get("/", health);
+router.get("/", (req, res) => {
+  res.status(200).send("OK");
+});
 
 // export
 
