@@ -1,9 +1,17 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.status(200).send({ name: "teste", age: 20, height: 178 });
-});
+// import controllers
+
+const {
+  consultarTodasAsPessoas,
+  consultarPessoaPorId,
+} = require("../controllers/pessoas");
+
+// routes
+
+router.get("/", consultarTodasAsPessoas);
+router.get("/:pessoaId", consultarPessoaPorId);
 
 // export
 

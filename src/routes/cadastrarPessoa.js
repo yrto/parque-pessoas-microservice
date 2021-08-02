@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/", (req, res) => {
-  const { name, age, height } = req.body;
+// import controller
 
-  res.status(201).send({ name, age, height });
-});
+const { cadastrarPessoa } = require("../controllers/cadastrarPessoa");
+
+// route handling
+
+router.post("/", cadastrarPessoa);
 
 // export
 

@@ -1,5 +1,7 @@
 const express = require("express");
 const routes = require("./routes");
+const mongooseConnect = require("./database");
+const MONGO_URL = require("./config");
 
 // config
 
@@ -15,6 +17,8 @@ server.use(express.json());
 server.use("/", routes);
 
 // listen
+
+mongooseConnect(MONGO_URL);
 
 server.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

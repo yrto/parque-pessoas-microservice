@@ -3,11 +3,11 @@ const router = express.Router();
 
 // import controller
 
-const { alterarPessoa } = require("../controllers/alterarPessoa");
+const { deletarPessoa } = require("../controllers/deletarPessoa");
 
 // route handling
 
-router.put("/", alterarPessoa);
+router.delete("/", deletarPessoa);
 
 // export
 

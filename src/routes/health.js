@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.status(200).send("OK");
-});
+// import controller
+
+const health = require("../controllers/health");
+
+// route handling
+
+router.get("/", health);
 
 // export
 
