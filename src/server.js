@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = require("./routes");
 const mongooseConnect = require("./database");
-const MONGO_URL = require("./config");
+const MONGO_DB = require("./config");
 const logger = require("./services/logger");
 const logPathMiddleware = require("./middleware/logPath");
 
@@ -27,7 +27,7 @@ server.use("/", routes);
 
 // listen
 
-mongooseConnect(MONGO_URL);
+mongooseConnect(MONGO_DB);
 
 server.listen(port, () => {
   logger.info(`Example app listening at http://localhost:${port}`);
