@@ -79,7 +79,7 @@ https://parque-pessoas.herokuapp.com/alterar-pessoa
 }
 ```
 
-## **DELETE**
+## **DELETE** - Deletar Pessoa
 
 ```
 https://parque-pessoas.herokuapp.com/deletar-pessoa
