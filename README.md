@@ -13,32 +13,24 @@ https://parque-pessoas.herokuapp.com/pessoas
 ```JSON
 [
     {
-        "_id": "_id",
         "pessoaId": "pessoaId",
         "nome": "nome",
-        "__v": 0
     },
     {
-        "_id": "_id",
         "pessoaId": "pessoaId",
         "nome": "nome",
-        "__v": 0
     }
 ]
 ```
 
 ```
-https://parque-pessoas.herokuapp.com/pessoas/:nome
+https://parque-pessoas.herokuapp.com/pessoas/id
 ```
 
 ### **Resposta**
 
 ```JSON
 [
-    {
-        "pessoaId": "pessoaId",
-        "nome": "nome",
-    },
     {
         "pessoaId": "pessoaId",
         "nome": "nome",
