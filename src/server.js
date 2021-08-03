@@ -4,6 +4,7 @@ const mongooseConnect = require("./database");
 const MONGO_DB = require("./config");
 const logger = require("./services/logger");
 const logPathMiddleware = require("./middleware/logPath");
+const errorTreatmentMiddleware = require("./middleware/errorTreatment");
 
 // config
 
@@ -12,18 +13,13 @@ const port = process.env.PORT || 3000;
 
 // middlewares
 
-// const errorTreatmentMiddleware = (error, req, res, next) => {
-//   logger.error(error);
-//   res.status(500).send("Not ok!");
-// };
-
 server.use(express.json());
 server.use(logPathMiddleware);
-// server.use(errorTreatmentMiddleware);
 
 // use routes from "/routes"
 
 server.use("/", routes);
+server.use(errorTreatmentMiddleware);
 
 // listen
 

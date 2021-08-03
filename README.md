@@ -36,16 +36,12 @@ https://parque-pessoas.herokuapp.com/pessoas/:nome
 ```JSON
 [
     {
-        "_id": "_id",
         "pessoaId": "pessoaId",
         "nome": "nome",
-        "__v": 0
     },
     {
-        "_id": "_id",
         "pessoaId": "pessoaId",
         "nome": "nome",
-        "__v": 0
     }
 ]
 ```

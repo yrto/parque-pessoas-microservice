@@ -12,12 +12,8 @@ async function consultarTodasAsPessoasService() {
 }
 
 async function consultarPessoaPorIdService(pessoaId) {
-  try {
-    const pessoaEncontrada = await PessoaModel.find({ pessoaId: pessoaId });
-    return pessoaEncontrada;
-  } catch (err) {
-    throw new Error(err);
-  }
+  const pessoa = await PessoaModel.findOne({ pessoaId });
+  return pessoa;
 }
 
 // export
