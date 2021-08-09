@@ -1,6 +1,6 @@
 # parque-pessoas
 
-Microserviço, com Express, para gestão de pessoas.
+Microserviço de gestão de pessoas.
 
 ## **GET** - Consultar Pessoas
 
