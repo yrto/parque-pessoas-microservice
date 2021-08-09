@@ -2,7 +2,7 @@
 
 Microserviço de gestão de pessoas.
 
-## **GET** - Consultar Pessoas
+## **GET** - Consultar Pessoas (com ou sem IDs)
 
 ```
 https://parque-pessoas.herokuapp.com/pessoas
