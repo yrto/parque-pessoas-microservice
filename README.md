@@ -1,6 +1,6 @@
 # parque-pessoas
 
-Microserviço de gestão de pessoas.
+Microserviço de gestão de pessoas para o projeto de parque de diversão.
 
 ## **GET** - Consultar Pessoas (com ou sem IDs)
 
