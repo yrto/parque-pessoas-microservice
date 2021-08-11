@@ -12,9 +12,10 @@ const server = express();
 
 // using middlewares & routes
 
+server.use(express.static("public"));
 server.use(express.json());
 server.use(logPathMiddleware);
-server.use("/", routes);
+server.use("/v1/", routes);
 server.use(errorTreatmentMiddleware);
 
 // listen
