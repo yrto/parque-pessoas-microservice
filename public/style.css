@@ -18,6 +18,10 @@ header {
   margin-bottom: 2rem;
 }
 
+header p {
+  margin-top: 2rem;
+}
+
 hr {
   border: 0;
   border-top: 2px solid black;

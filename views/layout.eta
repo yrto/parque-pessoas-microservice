@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= it.title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <%~ it.body %>
+    <footer>Copyright Eta, Inc.</footer>
+  </body>
+</html>
