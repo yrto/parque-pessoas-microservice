@@ -40,7 +40,7 @@ Authorization | Token
 ]
 ```
 
-# Consultar pessoa pelo pessoaId
+# Consultar pessoa pelo ID
 
 ## **GET**
 
