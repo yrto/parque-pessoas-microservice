@@ -1,14 +1,31 @@
 # parque-pessoas
 
-Microserviço de gestão de pessoas para o projeto de parque de diversão.
+Microserviço para gestão de pessoas em um parque de diversão. Projeto do módulo de Express do curso Web Full-Stack da Let's Code. Bibliotecas utilizadas:
 
-## **GET** - Consultar Pessoas (com ou sem IDs)
+- express
+- express-validation
+- axios
+- mongoose
+- nanoid
+- nodemon
+- dotenv
+- winston
+
+# Consultar Pessoas (com ou sem IDs)
+
+## **GET**
 
 ```
-https://parque-pessoas.herokuapp.com/pessoas
+https://parque-pessoas.herokuapp.com/v1/pessoas
 ```
 
-### **Resposta**
+## **Request Headers**
+
+```
+Authorization | Token
+```
+
+## **Response**
 
 ```JSON
 [
@@ -23,11 +40,15 @@ https://parque-pessoas.herokuapp.com/pessoas
 ]
 ```
 
+# Consultar Pessoa pelo ID
+
+## **GET**
+
 ```
-https://parque-pessoas.herokuapp.com/pessoas/id
+https://parque-pessoas.herokuapp.com/v1/pessoas/id
 ```
 
-### **Resposta**
+## **Response**
 
 ```JSON
 [
@@ -38,13 +59,15 @@ https://parque-pessoas.herokuapp.com/pessoas/id
 ]
 ```
 
-## **POST** - Cadastrar Pessoa
+# Cadastrar Pessoa
+
+## **POST**
 
 ```
-https://parque-pessoas.herokuapp.com/cadastrar-pessoa
+https://parque-pessoas.herokuapp.com/v1/cadastrar-pessoa
 ```
 
-### **Request Body (JSON)**
+## **Request Body (JSON)**
 
 ```JSON
 {
@@ -52,13 +75,15 @@ https://parque-pessoas.herokuapp.com/cadastrar-pessoa
 }
 ```
 
-## **PUT** - Alterar Pessoa
+# Alterar Pessoa
+
+## **PUT**
 
 ```
-https://parque-pessoas.herokuapp.com/alterar-pessoa
+https://parque-pessoas.herokuapp.com/v1/alterar-pessoa
 ```
 
-### **Request Body (JSON)**
+## **Request Body (JSON)**
 
 ```JSON
 {
@@ -67,13 +92,15 @@ https://parque-pessoas.herokuapp.com/alterar-pessoa
 }
 ```
 
-## **DELETE** - Deletar Pessoa
+# Deletar Pessoa
+
+## **DELETE**
 
 ```
-https://parque-pessoas.herokuapp.com/deletar-pessoa
+https://parque-pessoas.herokuapp.com/v1/deletar-pessoa
 ```
 
-### **Request Body (JSON)**
+## **Request Body (JSON)**
 
 ```JSON
 {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,11 @@
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
-    "eta": "^1.12.3",
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.3",
     "express-validation": "^3.0.8",
     "mongoose": "^5.13.5",
     "nanoid": "^3.1.23",
+    "nodemon": "^2.0.12",
     "winston": "^3.3.3"
   }
 }
