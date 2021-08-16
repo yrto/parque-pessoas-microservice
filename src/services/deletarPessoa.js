@@ -1,3 +1,4 @@
+const logger = require("./logger");
 const { PessoaModel } = require("../database/pessoa");
 
 // delete
@@ -5,6 +6,7 @@ const { PessoaModel } = require("../database/pessoa");
 async function deletarPessoaService(pessoaId) {
   try {
     await PessoaModel.deleteOne({ pessoaId: pessoaId });
+    logger.info(`Pessoa "${pessoaId}" deletada`);
   } catch (err) {
     throw new Error(err);
   }
@@ -12,4 +14,4 @@ async function deletarPessoaService(pessoaId) {
 
 // export
 
-module.exports = { deletarPessoaService };
+module.exports = deletarPessoaService;

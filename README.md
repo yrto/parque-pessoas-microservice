@@ -100,9 +100,11 @@ Authorization | Token
 
 ```JSON
 {
-  "pessoaId": "pessoaId",
-  "nome": "novoNomeDaPessoa"
-}
+  "pessoaId": String,
+  "nome": String,
+  "idade": Number,
+  "meiaEntrada": Boolean
+},
 ```
 
 # Deletar Pessoa

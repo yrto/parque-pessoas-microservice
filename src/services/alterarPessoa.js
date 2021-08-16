@@ -2,11 +2,15 @@ const { PessoaModel } = require("../database/pessoa");
 
 // update
 
-async function alterarNomePessoaService(pessoaId, novoNomeDaPessoa) {
+async function alterarPessoaService(pessoa) {
   try {
     await PessoaModel.updateOne(
-      { pessoaId: pessoaId },
-      { nome: novoNomeDaPessoa }
+      { pessoaId: pessoa.pessoaId },
+      {
+        nome: pessoa.nome,
+        idade: pessoa.idade,
+        meiaEntrada: pessoa.meiaEntrada,
+      }
     );
   } catch (err) {
     throw new Error(err);
@@ -15,4 +19,4 @@ async function alterarNomePessoaService(pessoaId, novoNomeDaPessoa) {
 
 // export
 
-module.exports = { alterarNomePessoaService };
+module.exports = alterarPessoaService;
