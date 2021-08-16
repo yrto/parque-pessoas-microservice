@@ -29,14 +29,13 @@ Authorization | Token
 
 ```JSON
 [
-    {
-        "pessoaId": "pessoaId",
-        "nome": "nome",
-    },
-    {
-        "pessoaId": "pessoaId",
-        "nome": "nome",
-    }
+  {
+    "pessoaId": String,
+    "nome": String,
+    "idade": Number,
+    "meiaEntrada": Boolean
+  },
+  ...
 ]
 ```
 
@@ -51,12 +50,12 @@ https://parque-pessoas.herokuapp.com/v1/pessoas/id
 ## **Response**
 
 ```JSON
-[
-    {
-        "pessoaId": "pessoaId",
-        "nome": "nome",
-    }
-]
+{
+    "pessoaId": String,
+    "nome": String,
+    "idade": Number,
+    "meiaEntrada": Boolean
+}
 ```
 
 # Cadastrar Pessoa
@@ -91,6 +90,12 @@ Authorization | Token
 https://parque-pessoas.herokuapp.com/v1/alterar-pessoa
 ```
 
+## **Request Headers**
+
+```
+Authorization | Token
+```
+
 ## **Request Body (JSON)**
 
 ```JSON
@@ -108,10 +113,16 @@ https://parque-pessoas.herokuapp.com/v1/alterar-pessoa
 https://parque-pessoas.herokuapp.com/v1/deletar-pessoa
 ```
 
+## **Request Headers**
+
+```
+Authorization | Token
+```
+
 ## **Request Body (JSON)**
 
 ```JSON
 {
-  "pessoaId": "pessoaId"
+  "pessoaId": String
 }
 ```
