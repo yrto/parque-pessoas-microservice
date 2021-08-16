@@ -11,7 +11,7 @@ Microserviço para gestão de pessoas em um parque de diversão. Projeto do mód
 - dotenv
 - winston
 
-# Consultar Pessoas (com ou sem IDs)
+# Consultar todas as pessoas
 
 ## **GET**
 
@@ -40,7 +40,7 @@ Authorization | Token
 ]
 ```
 
-# Consultar Pessoa pelo ID
+# Consultar pessoa pelo pessoaId
 
 ## **GET**
 
