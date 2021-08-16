@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const PessoaSchema = mongoose.Schema({
   pessoaId: String,
   nome: String,
+  idade: Number,
+  meiaEntrada: Boolean,
 });
 
 // model

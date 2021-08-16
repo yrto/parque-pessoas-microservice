@@ -4,6 +4,32 @@ const logger = require("./logger");
 const { INGRESSOS_URL, AUTH_TOKEN } = require("../config");
 const axios = require("axios");
 
+// auth headers
+
+const authHeaders = {
+  Authorization: AUTH_TOKEN,
+};
+
+// ingressos
+
+const checarIngressoInfo = (pessoa) => {
+  let ingressoInfo = {
+    tipoIngresso: "Cheio",
+    valorIngresso: 175,
+  };
+  if (pessoa.meiaEntrada === true)
+    ingresso = {
+      tipoIngresso: "Meia",
+      valorIngresso: 87.5,
+    };
+  if (pessoa.idade <= 12)
+    ingresso = {
+      tipoIngresso: "Infantil",
+      valorIngresso: 75,
+    };
+  return ingressoInfo;
+};
+
 // create
 
 async function cadastrarPessoaService(pessoa) {
@@ -18,46 +44,26 @@ async function cadastrarPessoaService(pessoa) {
 
     logger.info("Pessoa salva com sucesso!");
 
-    // ingressos
-
-    let ingresso = {
-      tipoIngresso: "Cheio",
-      valorIngresso: 175,
-    };
-    if (novaPessoa.meiaEntrada === true)
-      ingresso = {
-        tipoIngresso: "Meia",
-        valorIngresso: 87.5,
-      };
-    if (novaPessoa.idade <= 12)
-      ingresso = {
-        tipoIngresso: "Infantil",
-        valorIngresso: 75,
-      };
-
     // pessoa
 
+    const { tipoIngresso, valorIngresso } = checarIngressoInfo(novaPessoa);
+
     const apiIngressosBody = {
-      tipoIngresso: ingresso.tipoIngresso,
-      valor: ingresso.valorIngresso,
+      tipoIngresso: tipoIngresso,
+      valor: valorIngresso,
       creditoInicial: 0,
       valido: true,
       id: novaPessoa.pessoaId,
     };
 
-    // auth headers
+    // registrar na API de ingressos
 
-    const headers = {
-      Authorization: AUTH_TOKEN,
-    };
+    // const res = await axios.post(INGRESSOS_URL, apiIngressosBody, {
+    //   headers: authHeaders,
+    // });
 
-    // API ingressos
-
-    const res = await axios.post(INGRESSOS_URL, apiIngressosBody, {
-      headers: headers,
-    });
-
-    logger.info(res);
+    // logger.info(res);
+    logger.info(apiIngressosBody);
 
     // errors
   } catch (err) {
@@ -67,4 +73,4 @@ async function cadastrarPessoaService(pessoa) {
 
 // export
 
-module.exports = { cadastrarPessoaService };
+module.exports = cadastrarPessoaService;

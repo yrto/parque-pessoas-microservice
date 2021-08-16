@@ -67,11 +67,19 @@ https://parque-pessoas.herokuapp.com/v1/pessoas/id
 https://parque-pessoas.herokuapp.com/v1/cadastrar-pessoa
 ```
 
+## **Request Headers**
+
+```
+Authorization | Token
+```
+
 ## **Request Body (JSON)**
 
 ```JSON
 {
-  "nome": "nomeDaNovaPessoa"
+  "nome": String,
+  "idade": Number,
+  "meiaEntrada": Boolean
 }
 ```
 
