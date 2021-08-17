@@ -18,12 +18,12 @@ const checarIngressoInfo = (pessoa) => {
     valorIngresso: 175,
   };
   if (pessoa.meiaEntrada === true)
-    ingresso = {
+    ingressoInfo = {
       tipoIngresso: "Meia",
       valorIngresso: 87.5,
     };
   if (pessoa.idade <= 12)
-    ingresso = {
+    ingressoInfo = {
       tipoIngresso: "Infantil",
       valorIngresso: 75,
     };
