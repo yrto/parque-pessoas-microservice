@@ -52,17 +52,16 @@ async function cadastrarPessoaService(pessoa) {
       tipoIngresso: tipoIngresso,
       valor: valorIngresso,
       creditoInicial: 0,
-      valido: true,
       id: novaPessoa.pessoaId,
     };
 
     // registrar na API de ingressos
 
-    // const res = await axios.post(INGRESSOS_URL, apiIngressosBody, {
-    //   headers: authHeaders,
-    // });
+    const res = await axios.post(INGRESSOS_URL, apiIngressosBody, {
+      headers: authHeaders,
+    });
 
-    // logger.info(res);
+    logger.info(res);
     logger.info(apiIngressosBody);
 
     // errors
