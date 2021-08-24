@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "nanoid": "^3.1.23",
     "nodemon": "^2.0.12",
     "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
   }
 }

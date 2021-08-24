@@ -3,8 +3,8 @@ const express = require("express");
 const routes = require("./routes");
 const mongooseConnect = require("./database");
 const logger = require("./services/logger");
-const logPathMiddleware = require("./middleware/logPath");
-const errorTreatmentMiddleware = require("./middleware/errorTreatment");
+const logPathMiddleware = require("./middlewares/logPath");
+const errorTreatmentMiddleware = require("./middlewares/errorTreatment");
 
 // set up
 

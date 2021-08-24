@@ -1,8 +1,8 @@
-const { PessoaModel } = require("../database/pessoa");
-const { nanoid } = require("nanoid");
 const logger = require("./logger");
 const { INGRESSOS_URL, AUTH_TOKEN } = require("../config");
 const axios = require("axios");
+const criarDAO = require("./criarDAO");
+const checarIngressoInfo = require("./checarIngressoInfo");
 
 // auth headers
 
@@ -10,38 +10,14 @@ const authHeaders = {
   Authorization: AUTH_TOKEN,
 };
 
-// ingressos
-
-const checarIngressoInfo = (pessoa) => {
-  let ingressoInfo = {
-    tipoIngresso: "Cheio",
-    valorIngresso: 175,
-  };
-  if (pessoa.meiaEntrada === true)
-    ingressoInfo = {
-      tipoIngresso: "Meia",
-      valorIngresso: 87.5,
-    };
-  if (pessoa.idade <= 12)
-    ingressoInfo = {
-      tipoIngresso: "Infantil",
-      valorIngresso: 75,
-    };
-  return ingressoInfo;
-};
-
 // create
 
 async function cadastrarPessoaService(pessoa) {
   try {
-    // save
+    // instancia e salva pessoa no BD
 
-    const novaPessoa = new PessoaModel({
-      pessoaId: nanoid(10),
-      ...pessoa,
-    });
+    const novaPessoa = criarDAO(pessoa);
     await novaPessoa.save();
-
     logger.info("Pessoa salva com sucesso!");
 
     // pessoa

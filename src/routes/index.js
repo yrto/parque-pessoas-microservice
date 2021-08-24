@@ -4,7 +4,7 @@ const router = express.Router();
 // import routes
 
 const healthRoute = require("./health");
-const isAuthValidMiddleware = require("../middleware/isAuthValid");
+const isAuthValidMiddleware = require("../middlewares/isAuthValid");
 const pessoas = require("./pessoas");
 const cadastrarPessoaRoute = require("./cadastrarPessoa");
 const alterarPessoaRoute = require("./alterarPessoa");
