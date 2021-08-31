@@ -10,6 +10,7 @@ describe("Cria DOA", () => {
     });
     expect(dao instanceof PessoaModel).toBe(true);
   });
+
   it("DOA possui pessoaId", () => {
     const dao = criarDAO({
       nome: "Ayrton",

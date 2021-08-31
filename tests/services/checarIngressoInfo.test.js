@@ -35,4 +35,3 @@ describe("Checa e retorna dados sobre o ingresso", () => {
     });
   });
 });
-test("Checa informações do ingresso e retorna objeto com os dados", () => {});
