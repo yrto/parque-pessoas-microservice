@@ -6,10 +6,12 @@ const logger = require("../services/logger");
 
 const isAuthValid = async (token) => {
   try {
-    const res = await axios.post(`${AUTH_URL}/login/authorize`, { token });
+    const url = `${AUTH_URL}/login/authorize`;
+    const res = await axios.post(url, { token });
     return res.data.role === "peasant";
   } catch (err) {
     logger.error(err.message);
+    return false;
   }
 };
 
