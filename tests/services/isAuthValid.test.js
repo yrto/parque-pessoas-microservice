@@ -7,7 +7,7 @@ jest.mock("../../src/services/logger", () => {
   return { error: jest.fn() };
 });
 
-describe("o serviço de autenticação", () => {
+describe("Serviço de autenticação", () => {
   it("retorna true", async () => {
     axios.post.mockResolvedValueOnce({ data: { role: "peasant" } });
     const res = await isAuthValid();

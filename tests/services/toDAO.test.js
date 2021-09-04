@@ -1,8 +1,8 @@
 const { PessoaModel } = require("../../src/database/pessoa");
 const criarDAO = require("../../src/services/criarDAO");
 
-describe("Cria DOA", () => {
-  it("DOA é uma instância de PessoaModel", () => {
+describe("Serviço de criação de DAO", () => {
+  it("DAO é uma instância de PessoaModel", () => {
     const dao = criarDAO({
       nome: "Ayrton",
       idade: 29,
@@ -11,7 +11,7 @@ describe("Cria DOA", () => {
     expect(dao instanceof PessoaModel).toBe(true);
   });
 
-  it("DOA possui pessoaId", () => {
+  it("DAO possui pessoaId", () => {
     const dao = criarDAO({
       nome: "Ayrton",
       idade: 29,

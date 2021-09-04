@@ -5,10 +5,13 @@ const { PessoaModel } = require("../database/pessoa");
 
 async function deletarPessoaService(pessoaId) {
   try {
-    await PessoaModel.deleteOne({ pessoaId: pessoaId });
+    const res = await PessoaModel.deleteOne({ pessoaId: pessoaId });
+    if (res.deletedCount === 0) {
+      throw new Error(`Pessoa "${pessoaId}" não encontrada`);
+    }
     logger.info(`Pessoa "${pessoaId}" deletada`);
   } catch (err) {
-    throw new Error(err);
+    logger.error(err);
   }
 }
 
